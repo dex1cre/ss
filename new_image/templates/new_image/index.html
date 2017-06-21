@@ -6,7 +6,7 @@
 </head>
 <body>
 	<hr>
-	<form action="/new_image/send" enctype="multipart/form-data">
+	<form action="{% url 'send_image' %}" enctype="multipart/form-data" method="post">
 		{% csrf_token %}
 		<input type="text" name="author" placeholder="Как вы себя назавёте? (латинские символы)" required>
 		{{form}}
