@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>ss-New Image</title>
+</head>
+<body>
+	<hr>
+	<form action="/new_image/send" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input type="text" name="author" placeholder="Как вы себя назавёте? (латинские символы)" required>
+		{{form}}
+		<input type="submit" value="Отправить">
+	</form>
+</body>
+</html>
