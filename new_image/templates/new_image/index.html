@@ -10,6 +10,7 @@
 		{% csrf_token %}
 		<input type="text" name="author" placeholder="Как вы себя назавёте? (латинские символы)" required>
 		{{form}}
+		<input type="text" name="tags" placeholder="напишите теги через #">
 		<input type="submit" value="Отправить">
 	</form>
 </body>

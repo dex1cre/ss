@@ -1,11 +1,5 @@
 from django.db import models
 
-# class User(models.Model):
-# 	name = models.CharField(max_length=200)
-
-# 	def __str__(self):
-# 		return self.name
-
 class Image(models.Model):
 	author = models.ForeignKey('auth.User')
 	image = models.ImageField(upload_to="images", verbose_name="Imagesss", blank=True)
@@ -13,3 +7,16 @@ class Image(models.Model):
 
 	def __str__(self):
 		return str(self.author)
+
+class Tags(models.Model):
+	name = models.CharField(max_length=30)
+
+	def __str__(self):
+		return self.name
+
+class ImageTag(models.Model):
+	tag = models.ForeignKey('Tags')
+	image = models.ForeignKey('Image')
+
+	def __str__(self):
+		return str(self.tag) + "->" + str(self.image)
