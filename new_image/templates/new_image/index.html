@@ -8,9 +8,11 @@
 	<hr>
 	<form action="{% url 'send_image' %}" enctype="multipart/form-data" method="post">
 		{% csrf_token %}
-		<input type="text" name="author" placeholder="Как вы себя назавёте? (латинские символы)" required>
+		<label for="form_author">Как вы себя назавёте?</label>
+		<input type="text" name="author" id="form_author" placeholder="Как вы себя назавёте? (латинские символы)" required>
 		{{form}}
-		<input type="text" name="tags" placeholder="напишите теги через #">
+		<label for="form_tags">Теги:</label>
+		<input type="text" name="tags" id="form_tags" placeholder="напишите теги через #">
 		<input type="submit" value="Отправить">
 	</form>
 </body>

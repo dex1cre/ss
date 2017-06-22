@@ -2,8 +2,8 @@ from django.db import models
 
 class Image(models.Model):
 	author = models.ForeignKey('auth.User')
-	image = models.ImageField(upload_to="images", verbose_name="Imagesss", blank=True)
-	description = models.CharField(max_length=30)
+	image = models.ImageField(upload_to="images", verbose_name="Изображение", blank=True)
+	description = models.CharField(verbose_name='Короткое описание', max_length=30)
 
 	def __str__(self):
 		return str(self.author)

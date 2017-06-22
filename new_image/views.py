@@ -23,6 +23,13 @@ def send(request):
 				password = ''.join(choice(ascii_letters) for i in range(12))
 				user = User.objects.create_user(author_name, author_name+'@mail.ru', password)
 				user.save()
+			else:
+				error = 400
+				description = "Такой автор уже имеется!"
+				return render(request, "ss/bad_result.html", {
+					"error": error,
+					"description": description
+					})
 
 			
 			post = form.save(commit=False)
